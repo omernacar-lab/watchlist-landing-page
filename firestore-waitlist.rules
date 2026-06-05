@@ -1,0 +1,33 @@
+// WatchList — Waitlist Firestore guvenlik kurali
+// ------------------------------------------------
+// Bu blogu UYGULAMA projenizin firestore.rules dosyasindaki
+//   match /databases/{database}/documents { ... }
+// blogunun ICINE ekleyin, sonra:  firebase deploy --only firestore:rules
+//
+// Mantik: landing page'den HERKES (giris yapmadan) tek bir e-posta belgesi
+// OLUSTURABILIR (create). Kimse waitlist'i OKUYAMAZ / GUNCELLEYEMEZ / SILEMEZ
+// (read/update/delete = false). Boylece e-posta listeniz disariya sizmaz;
+// siz yalnizca Firebase Console'dan gorursunuz.
+//
+// Belge yalnizca beklenen alanlari icermeli ve e-posta gecerli formatta olmali
+// — bu, cop/istismar belgelerini sinirlar.
+
+match /waitlist/{docId} {
+  allow create: if request.resource.data.keys().hasOnly(['email', 'lang', 'ts', 'ua'])
+                && request.resource.data.email is string
+                && request.resource.data.email.size() > 3
+                && request.resource.data.email.size() < 200
+                && request.resource.data.email.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$')
+                && request.resource.data.lang is string
+                && request.resource.data.lang.size() < 5
+                && request.resource.data.ua is string
+                && request.resource.data.ua.size() < 400
+                && request.resource.data.ts == request.time;
+  allow read, update, delete: if false;
+}
+
+// NOT (istismara karsi): Bu kural acik (unauthenticated) create'e izin verir.
+// Dusuk hacimli bir bekleme listesi icin yeterlidir. Spam/bot endisesi olursa
+// Firebase App Check (reCAPTCHA v3) ekleyeb(web) veya Formspree gibi bir
+// servise gecebilirsiniz. Mevcut haliyle okuma kapali oldugundan e-postalar
+// gizli kalir; en kotu senaryo cop belge birikmesidir (Console'dan silinir).

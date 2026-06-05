@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WatchList — BIST, döviz, kripto ve emtia takibi</title>
+  <meta name="description" content="WatchList: BIST, döviz, kripto, emtia, endeks ve fonları tek ekranda takip et. Sosyal medya gündemi + yapay zeka özetleriyle. Çok yakında." />
+
+  <!-- Open Graph / paylasim onizlemesi -->
+  <meta property="og:title" content="WatchList — Piyasaları tek ekranda takip et" />
+  <meta property="og:description" content="BIST, döviz, kripto, emtia ve daha fazlası. Sosyal medya gündemi + AI özetleri. Çok yakında." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#9d8bff"/><stop offset="1" stop-color="#00d4ff"/>
+            </linearGradient>
+          </defs>
+          <polyline points="10,42 24,26 35,35 54,14" fill="none" stroke="url(#bg)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="54" cy="14" r="5" fill="#00e5a0"/>
+        </svg>
+        <span class="name">WatchList</span>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#features" data-i18n="nav_features">Özellikler</a>
+          <a href="privacy.html" data-i18n="nav_privacy">Gizlilik</a>
+          <a href="terms.html" data-i18n="nav_terms">Şartlar</a>
+        </nav>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button data-setlang="tr">TR</button>
+          <button data-setlang="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO + WAITLIST -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="badge" data-i18n="hero_badge">Çok yakında</span>
+        <h1 data-i18n="hero_title" data-i18n-html>Piyasaları <span class="grad">tek ekranda</span> takip et</h1>
+        <p class="sub" data-i18n="hero_sub">BIST, döviz, kripto, emtia, endeks ve fonlar — hepsi tek listede. Sosyal medya gündemi ve yapay zeka özetleriyle.</p>
+
+        <form class="waitlist" id="waitlist-form" novalidate>
+          <div class="row">
+            <input type="email" id="wl-email" autocomplete="email" required
+                   placeholder="E-posta adresin" data-i18n-ph="waitlist_ph" />
+            <button type="submit" class="submit" id="wl-submit" data-i18n="waitlist_btn">Bekleme listesine katıl</button>
+          </div>
+          <div class="form-msg" id="wl-msg" role="status" aria-live="polite"></div>
+        </form>
+
+        <div class="stores">
+          <span class="store-pill">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 1.6c.1 1-.3 2-1 2.8-.7.8-1.7 1.4-2.7 1.3-.1-1 .4-2 1-2.7.7-.8 1.8-1.4 2.7-1.4zM19.6 17c-.5 1.2-.8 1.7-1.5 2.7-1 1.4-2.3 3.2-4 3.2-1.5 0-1.9-1-3.9-1-2 0-2.5 1-3.9 1-1.7 0-3-1.6-4-3C-.6 16.6-1 11.4 1.4 8.6 2.5 7.3 4.1 6.4 5.8 6.4c1.7 0 2.8 1 4.2 1 1.4 0 2.2-1 4.2-1 1.5 0 3 .8 4.1 2.2-3.6 2-3 7.1 1.3 8.4z"/></svg>
+            <span data-i18n="store_ios">App Store — çok yakında</span>
+          </span>
+          <span class="store-pill">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.2c-.3.3-.5.7-.5 1.3v17c0 .6.2 1 .5 1.3l9.1-9.8L3.6 2.2zm10.7 8.1l2.8-3-9.5-5.4c-.5-.3-1-.3-1.4-.1l8.1 8.5zm0 3.4l-8.1 8.5c.4.2.9.2 1.4-.1l9.5-5.4-2.8-3zm5.4-1.7l-2.2-1.2-3 3.2 3 3.2 2.2-1.3c.9-.5.9-1.6 0-2.7z"/></svg>
+            <span data-i18n="store_android">Google Play — çok yakında</span>
+          </span>
+        </div>
+
+        <p class="disclaimer" data-i18n="disclaimer">WatchList bir takip ve bilgilendirme uygulamasıdır. Veriler internetten toplanır, en az 15 dakika gecikmeli olabilir ve hiçbir içeriği yatırım tavsiyesi niteliği taşımaz.</p>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="wrap">
+        <h2 data-i18n="feat_h2">Tek uygulama, tüm piyasalar</h2>
+        <p class="lead" data-i18n="feat_lead">İhtiyacın olan her şey sade ve hızlı bir arayüzde.</p>
+        <div class="grid">
+          <div class="card">
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+            <h3 data-i18n="f1_t">Tüm piyasalar</h3>
+            <p data-i18n="f1_d">BIST, döviz, kripto, emtia, endeks, tahvil, TEFAS fonları ve ETF'ler — tek listede.</p>
+          </div>
+          <div class="card">
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/><path d="M12 8v4l3 2"/></svg></div>
+            <h3 data-i18n="f2_t">Gündem + AI özeti</h3>
+            <p data-i18n="f2_d">X'te (Twitter) konuşulan varlıklar yapay zeka ile özetlenir; kaynağa tek dokunuşla ulaş.</p>
+          </div>
+          <div class="card">
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+            <h3 data-i18n="f3_t">Kişisel izleme listesi</h3>
+            <p data-i18n="f3_d">Kendi listeni oluştur, sürükle-bırak ile sırala; detayda haber ve grafik.</p>
+          </div>
+          <div class="card">
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+            <h3 data-i18n="f4_t">Piyasa nabzı</h3>
+            <p data-i18n="f4_d">Korku/açgözlülük göstergesi ile en hareketli, yükselen ve düşen varlıklar.</p>
+          </div>
+          <div class="card">
+            <div class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 18h2"/></svg></div>
+            <h3 data-i18n="f5_t">Telefon için tasarlandı</h3>
+            <p data-i18n="f5_d">Sade, hızlı ve koyu arayüz. Gözü yormayan, dikkat dağıtmayan deneyim.</p>
+          </div>
+          <div class="card">
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
+            <h3 data-i18n="f6_t">Gizlilik öncelikli</h3>
+            <p data-i18n="f6_d">Reklam yok, takip yok, veri satışı yok. Hesabını dilediğin an tamamen silebilirsin.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+          <polyline points="10,42 24,26 35,35 54,14" fill="none" stroke="#9d8bff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="name">WatchList</span>
+      </div>
+      <div class="links">
+        <a href="privacy.html" data-i18n="nav_privacy">Gizlilik</a>
+        <a href="terms.html" data-i18n="nav_terms">Şartlar</a>
+        <a href="mailto:omer_nacar@hotmail.com">İletişim</a>
+      </div>
+      <div class="copy">© <span id="year">2026</span> WatchList</div>
+    </div>
+  </footer>
+
+  <!-- Dil sozlugu -->
+  <script>
+    window.I18N = {
+      tr: {
+        nav_features: "Özellikler",
+        nav_privacy: "Gizlilik",
+        nav_terms: "Şartlar",
+        hero_badge: "Çok yakında",
+        hero_title: 'Piyasaları <span class="grad">tek ekranda</span> takip et',
+        hero_sub: "BIST, döviz, kripto, emtia, endeks ve fonlar — hepsi tek listede. Sosyal medya gündemi ve yapay zeka özetleriyle.",
+        waitlist_ph: "E-posta adresin",
+        waitlist_btn: "Bekleme listesine katıl",
+        waitlist_sending: "Gönderiliyor…",
+        waitlist_ok: "Teşekkürler! Yayına çıktığımızda ilk sen haberdar olacaksın.",
+        waitlist_invalid: "Lütfen geçerli bir e-posta adresi gir.",
+        waitlist_err: "Bir şeyler ters gitti, lütfen daha sonra tekrar dene.",
+        waitlist_unconfigured: "Form henüz yapılandırılmadı. (Firebase ayarı eksik)",
+        store_ios: "App Store — çok yakında",
+        store_android: "Google Play — çok yakında",
+        disclaimer: "WatchList bir takip ve bilgilendirme uygulamasıdır. Veriler internetten toplanır, en az 15 dakika gecikmeli olabilir ve hiçbir içeriği yatırım tavsiyesi niteliği taşımaz.",
+        feat_h2: "Tek uygulama, tüm piyasalar",
+        feat_lead: "İhtiyacın olan her şey sade ve hızlı bir arayüzde.",
+        f1_t: "Tüm piyasalar", f1_d: "BIST, döviz, kripto, emtia, endeks, tahvil, TEFAS fonları ve ETF'ler — tek listede.",
+        f2_t: "Gündem + AI özeti", f2_d: "X'te (Twitter) konuşulan varlıklar yapay zeka ile özetlenir; kaynağa tek dokunuşla ulaş.",
+        f3_t: "Kişisel izleme listesi", f3_d: "Kendi listeni oluştur, sürükle-bırak ile sırala; detayda haber ve grafik.",
+        f4_t: "Piyasa nabzı", f4_d: "Korku/açgözlülük göstergesi ile en hareketli, yükselen ve düşen varlıklar.",
+        f5_t: "Telefon için tasarlandı", f5_d: "Sade, hızlı ve koyu arayüz. Gözü yormayan, dikkat dağıtmayan deneyim.",
+        f6_t: "Gizlilik öncelikli", f6_d: "Reklam yok, takip yok, veri satışı yok. Hesabını dilediğin an tamamen silebilirsin."
+      },
+      en: {
+        nav_features: "Features",
+        nav_privacy: "Privacy",
+        nav_terms: "Terms",
+        hero_badge: "Coming soon",
+        hero_title: 'Track every market <span class="grad">in one place</span>',
+        hero_sub: "Turkish & global stocks, FX, crypto, commodities, indices and funds — all in one list. With social buzz and AI summaries.",
+        waitlist_ph: "Your email address",
+        waitlist_btn: "Join the waitlist",
+        waitlist_sending: "Sending…",
+        waitlist_ok: "Thanks! You'll be the first to know when we launch.",
+        waitlist_invalid: "Please enter a valid email address.",
+        waitlist_err: "Something went wrong, please try again later.",
+        waitlist_unconfigured: "The form isn't configured yet. (Firebase config missing)",
+        store_ios: "App Store — coming soon",
+        store_android: "Google Play — coming soon",
+        disclaimer: "WatchList is a tracking and information app. Data is collected from the internet, may be delayed by at least 15 minutes, and none of its content constitutes investment advice.",
+        feat_h2: "One app, all markets",
+        feat_lead: "Everything you need in a clean, fast interface.",
+        f1_t: "All markets", f1_d: "Turkish stocks, FX, crypto, commodities, indices, bonds, funds and ETFs — in a single list.",
+        f2_t: "Buzz + AI summary", f2_d: "Assets discussed on X (Twitter) are summarized by AI; reach the source in one tap.",
+        f3_t: "Personal watchlist", f3_d: "Build your own list, reorder by drag & drop; news and charts in detail.",
+        f4_t: "Market pulse", f4_d: "Fear/greed gauge plus the most active, gaining and losing assets.",
+        f5_t: "Built for mobile", f5_d: "Clean, fast, dark interface. Easy on the eyes, free of distractions.",
+        f6_t: "Privacy first", f6_d: "No ads, no tracking, no data selling. Delete your account entirely whenever you want."
+      }
+    };
+  </script>
+  <script src="lang.js"></script>
+
+  <!-- Firebase waitlist (e-postalar Firestore 'waitlist' koleksiyonuna yazilir) -->
+  <!--
+    KURULUM (omer):
+    1) Firebase Console → Project Settings → "Your apps" → Web app (yoksa ekle)
+       → "SDK setup and configuration" → Config → asagidaki FIREBASE_CONFIG'e yapistir.
+       (Bu anahtarlar PUBLIC'tir, repo'da durmasi guvenlidir.)
+    2) Firestore guvenlik kuralina 'waitlist' create iznini ekle
+       (bkz. firestore-waitlist.rules) ve deploy et.
+  -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp }
+      from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    // ▼▼▼ BURAYI KENDİ FIREBASE WEB CONFIG'İNLE DEĞİŞTİR ▼▼▼
+    const FIREBASE_CONFIG = {
+      apiKey: "PASTE_API_KEY",
+      authDomain: "PASTE_PROJECT.firebaseapp.com",
+      projectId: "PASTE_PROJECT_ID",
+      storageBucket: "PASTE_PROJECT.appspot.com",
+      messagingSenderId: "PASTE_SENDER_ID",
+      appId: "PASTE_APP_ID"
+    };
+    // ▲▲▲ ----------------------------------------------- ▲▲▲
+
+    const form = document.getElementById("waitlist-form");
+    const emailEl = document.getElementById("wl-email");
+    const btn = document.getElementById("wl-submit");
+    const msg = document.getElementById("wl-msg");
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function t(key) {
+      const lang = document.documentElement.lang || "tr";
+      return (window.I18N[lang] && window.I18N[lang][key]) || (window.I18N.tr[key]) || "";
+    }
+    function setMsg(text, kind) {
+      msg.textContent = text;
+      msg.className = "form-msg" + (kind ? " " + kind : "");
+    }
+    const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+
+    let db = null;
+    const configured = !FIREBASE_CONFIG.apiKey.startsWith("PASTE");
+    if (configured) {
+      try {
+        const app = initializeApp(FIREBASE_CONFIG);
+        db = getFirestore(app);
+      } catch (e) {
+        console.error("Firebase init failed:", e);
+      }
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = (emailEl.value || "").trim().toLowerCase();
+      if (!EMAIL_RE.test(email) || email.length > 200) {
+        setMsg(t("waitlist_invalid"), "err");
+        return;
+      }
+      if (!db) {
+        setMsg(t("waitlist_unconfigured"), "err");
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = t("waitlist_sending");
+      try {
+        await addDoc(collection(db, "waitlist"), {
+          email: email,
+          lang: document.documentElement.lang || "tr",
+          ts: serverTimestamp(),
+          ua: (navigator.userAgent || "").slice(0, 300)
+        });
+        setMsg(t("waitlist_ok"), "ok");
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        setMsg(t("waitlist_err"), "err");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = t("waitlist_btn");
+      }
+    });
+  </script>
+</body>
+</html>
