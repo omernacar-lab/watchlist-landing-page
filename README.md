@@ -30,15 +30,15 @@ Sayfalar **iki dilli** (Türkçe varsayılan, sağ üstten TR/EN). Tarayıcı di
    git add .
    git commit -m "WatchList landing + privacy + terms"
    git branch -M main
-   git remote add origin https://github.com/omernacar-lab/watchlist-landing.git
+   git remote add origin https://github.com/omernacar-lab/watchlist-landing-page.git
    git push -u origin main
    ```
 3. Repo → **Settings → Pages** → *Build and deployment* → Source: **Deploy from a branch**,
    Branch: **main** / **/(root)** → Save.
 4. ~1 dk sonra siteniz yayında:
-   - Landing: `https://omernacar-lab.github.io/watchlist-landing/`
-   - **Gizlilik (Apple'a verilecek): `https://omernacar-lab.github.io/watchlist-landing/privacy.html`**
-   - Şartlar: `https://omernacar-lab.github.io/watchlist-landing/terms.html`
+   - Landing: `https://omernacar-lab.github.io/watchlist-landing-page/`
+   - **Gizlilik (Apple'a verilecek): `https://omernacar-lab.github.io/watchlist-landing-page/privacy.html`**
+   - Şartlar: `https://omernacar-lab.github.io/watchlist-landing-page/terms.html`
 
 > Özel alan adı (örn. `watchlistapp.com`) istersen: Settings → Pages → Custom domain.
 > Repo köküne `CNAME` dosyası eklenir. Apple'a o zaman özel domain URL'sini verirsin.
