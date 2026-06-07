@@ -209,16 +209,16 @@
     import { getFirestore, collection, addDoc, serverTimestamp }
       from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-    // ▼▼▼ BURAYI KENDİ FIREBASE WEB CONFIG'İNLE DEĞİŞTİR ▼▼▼
+    // WatchList Firebase web config (wacthlist-dev). Bu anahtarlar PUBLIC'tir,
+    // repo'da durmasi guvenlidir — gizli degildir. (lib/firebase_options.dart 'web')
     const FIREBASE_CONFIG = {
-      apiKey: "PASTE_API_KEY",
-      authDomain: "PASTE_PROJECT.firebaseapp.com",
-      projectId: "PASTE_PROJECT_ID",
-      storageBucket: "PASTE_PROJECT.appspot.com",
-      messagingSenderId: "PASTE_SENDER_ID",
-      appId: "PASTE_APP_ID"
+      apiKey: "AIzaSyAG1ZsUiOE9UQU71b8C3M01nN1ryCQJ-g0",
+      authDomain: "wacthlist-dev.firebaseapp.com",
+      projectId: "wacthlist-dev",
+      storageBucket: "wacthlist-dev.firebasestorage.app",
+      messagingSenderId: "794333959284",
+      appId: "1:794333959284:web:baf1c1b0398917cabded21"
     };
-    // ▲▲▲ ----------------------------------------------- ▲▲▲
 
     const form = document.getElementById("waitlist-form");
     const emailEl = document.getElementById("wl-email");
